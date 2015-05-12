@@ -13,3 +13,10 @@
 
 - name: Create MySQL database symfony
   command: mysql -u root -e "CREATE DATABASE IF NOT EXISTS symfony;"
+
+#- name: Import MySQL databse
+#  command: mysql --user=root --password= --default_character_set utf8 symfony < /var/www/database_core.sql
+
+- name: Import the database
+  mysql_db: name=symfony state=import target=/var/www/database_core.sql
+  ignore_errors: true

@@ -1,0 +1,17 @@
+---
+- name: Doctrine schema update
+  command: php /var/www/app/console doctrine:schema:update --force
+- name: Clear production cache
+  command: php /var/www/app/console cache:clear --env=prod --no-debug
+- name: Warm production cache
+  command: php /var/www/app/console cache:warmup --env=prod --no-debug
+- name: Clear development cache
+  command: php /var/www/app/console cache:clear --env=dev --no-debug
+- name: Warm development cache
+  command: php /var/www/app/console cache:warmup --env=dev --no-debug
+#- name: Bower update
+#  command: bower update --allow-root
+
+
+  # Pull new from git
+  #git pull

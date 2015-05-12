@@ -1,0 +1,16 @@
+---
+- name: Install Python Dev
+  sudo: yes
+  apt:  pkg=python-dev state=latest
+
+- name: Install PIP
+  sudo: yes
+  apt:  pkg=python-pip state=latest
+
+- name: Install Python-MySQL Dev
+  sudo: yes
+  apt:  pkg=libmysqlclient-dev state=latest
+
+- name: Install Python-MySQL
+  sudo: yes
+  pip: name=MySQL-python
