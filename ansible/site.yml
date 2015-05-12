@@ -28,6 +28,7 @@
     - php5-common
     - composer
     - phpunit
+    - pip
     - mysql
     - mongo
     - git
@@ -37,3 +38,4 @@
     - rabbitmq
     - redis
     - memcached
+    - symfony
