@@ -11,8 +11,10 @@ Vagrant.configure("2") do |config|
     config.vm.network :forwarded_port,  guest: 27017, host: 27017
 
     # Configure shared folders
-    config.vm.synced_folder ".",  "/vagrant", id: "vagrant-root", :nfs => true
-    config.vm.synced_folder "..", "/var/www", id: "application",  :nfs => true
+    #config.vm.synced_folder ".",  "/vagrant", id: "vagrant-root", :nfs => true
+    #config.vm.synced_folder "..", "/var/www", id: "application",  :nfs => true
+    config.vm.synced_folder ".",  "/vagrant", id: "vagrant-root"
+    config.vm.synced_folder "..", "/var/www", id: "application"
 
     # Configure VirtualBox environment
     config.vm.provider :virtualbox do |v|
