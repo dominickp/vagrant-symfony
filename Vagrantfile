@@ -17,7 +17,7 @@ Vagrant.configure("2") do |config|
     #config.vm.synced_folder ".",  "/vagrant", id: "vagrant-root", :nfs => true
     #config.vm.synced_folder "..", "/var/www", id: "application",  :nfs => true
     config.vm.synced_folder ".",  "/vagrant", id: "vagrant-root"
-    config.vm.synced_folder "..", "/var/www", id: "application"
+    config.vm.synced_folder "..", "/var/www", id: "application", group: "www-data", owner: "www-data"
 
     # Configure VirtualBox environment
     config.vm.provider :virtualbox do |v|
@@ -30,4 +30,6 @@ Vagrant.configure("2") do |config|
     #    ansible.extra_vars = { ansible_ssh_user: 'vagrant' }
     #    ansible.playbook = "ansible/site.yml"
     #end
+
+
 end
