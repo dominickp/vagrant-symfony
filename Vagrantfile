@@ -1,7 +1,9 @@
 Vagrant.configure("2") do |config|
     # Configure the box to use
-    config.vm.box       = 'precise64'
-    config.vm.box_url   = 'http://files.vagrantup.com/precise64.box'
+    #config.vm.box       = 'precise64'
+    #config.vm.box_url   = 'http://files.vagrantup.com/precise64.box'
+    config.vm.box       = 'XJRRLXJN'
+    config.vm.box_url   = 'http://shawmutweb.com/vagrant/package.box'
     config.ssh.insert_key = false
 
     # Configure the network interfaces
@@ -24,8 +26,8 @@ Vagrant.configure("2") do |config|
     end
 
     # Provision the box
-    config.vm.provision :ansible do |ansible|
-        ansible.extra_vars = { ansible_ssh_user: 'vagrant' }
-        ansible.playbook = "ansible/site.yml"
-    end
+    #config.vm.provision :ansible do |ansible|
+    #    ansible.extra_vars = { ansible_ssh_user: 'vagrant' }
+    #    ansible.playbook = "ansible/site.yml"
+    #end
 end
